@@ -91,7 +91,7 @@ define thin::site (
   $port                 = '3000',
   $servers              = '3',
   $timeout              = '15',
-  $user                 = 'thin'
+  $user                 = 'thin',
   $tag                  = "${name}"
 ){
 
