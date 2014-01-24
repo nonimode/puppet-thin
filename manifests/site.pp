@@ -83,7 +83,7 @@ define thin::site (
   $address              = '0.0.0.0',
   $daemonize            = true,
   $environment          = 'production',
-  $log                  = "/var/log/${name}/${name}.log",
+  $log                  = "/var/log/thin/${name}/${name}.log",
   $group                = 'thin',
   $max_conns            = '1024',
   $max_persistent_conns = '512',
@@ -103,13 +103,12 @@ define thin::site (
     "/etc/thin/${name}.yml":
       owner   => root,
       group   => root,
-      content => template('thin/thin.yml'),
-      notify  => Service["thin"];
+      content => template('thin/thin.yml');
 
     $logdir:
       ensure => directory,
       owner  => $user,
       group  => $group,
-      mode   => '0775';
+      mode   => '0755';
   }
 }

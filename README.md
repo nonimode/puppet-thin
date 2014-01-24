@@ -14,13 +14,6 @@ Generic thin install
   class { 'thin': }
 </pre>
 
-By default the "/usr/bin/thin" executable is used, if you want to specify a different bin:
-<pre>
-  class { 'thin': 
-    exec => '/path/to/bin/thin'
-  }
-</pre>
-
 Adding a thin site
 <pre>
   thin::site { 'coolapp':
