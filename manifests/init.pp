@@ -22,4 +22,14 @@ class thin {
     group   => root,
     mode    => '0775',
   }
+
+  file { '/etc/thin':
+    ensure  => directory,
+    owner   => root,
+    group   => root,
+    mode    => '0555',
+    purge   => true,
+    recurse => true,
+    force   => true,
+  }
 }
