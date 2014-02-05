@@ -98,12 +98,19 @@ define thin::site (
   include thin
 
   $logdir = inline_template('<%= File.dirname(scope.lookupvar(\'log\') ) %>')
+  $piddir = inline_template('<%= File.dirname(scope.lookupvar(\'pid\') ) %>')
 
   file {
     "/etc/thin/${name}.yml":
       owner   => root,
       group   => root,
       content => template('thin/thin.yml');
+
+    $piddir:
+      ensure => directory,
+      owner  => $user,
+      group  => $group,
+      mode   => '0755';
 
     $logdir:
       ensure => directory,
