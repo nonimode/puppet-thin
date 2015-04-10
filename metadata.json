@@ -1,0 +1,17 @@
+{
+  "name": "noni-thin",
+  "version": "0.0.1",
+  "author": "Leo Bossmann",
+  "license": "Apache-2.0",
+  "summary": "Puppet module to configure thin",
+  "source": "https://github.com/nonimode/puppet-thin",
+  "project_page": "https://github.com/nonimode/puppet-thin",
+  "issues_url": "https://github.com/nonimode/puppet-thin/issues",
+  "operatingsystem_support": [
+    {
+    "operatingsystem": "Ubuntu",
+    "operatingsystemrelease": [ "14.04", "12.04" ]
+    }
+   ],
+  "dependencies": []
+}
